@@ -1,0 +1,19 @@
+{
+  "name": "browser-reject",
+  "version": "1.0.0",
+  "description": "[jReject](http://jreject.turnwheel.com/) - jQuery Browser Rejection Plugin ================================",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozangunalp/jReject.git"
+  },
+  "author": "ozangunalp@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ozangunalp/jReject/issues"
+  },
+  "homepage": "https://github.com/ozangunalp/jReject#readme"
+}
