@@ -1,6 +1,6 @@
 {
   "name": "browser-reject",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Small no-dependency utility to detect the browser from the user agent and reject some browsers",
   "source": "js/browser-reject.ts",
   "main": "dist/browser-reject.js",
