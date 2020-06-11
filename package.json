@@ -2,9 +2,25 @@
   "name": "browser-reject",
   "version": "1.0.0",
   "description": "[jReject](http://jreject.turnwheel.com/) - jQuery Browser Rejection Plugin ================================",
-  "main": "index.ts",
+  "source": "js/index.ts",
+  "main": "dist/browser-reject.js",
+  "umd:name": "BrowserReject",
+  "umd:main": "dist/browser-reject.umd.js",
+  "module": "dist/browser-reject.es.js",
+  "types": "dist/types/browser-reject.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "jest"
+    "watch": "rollup -c rollup.config.ts -w",
+    "prebuild": "rimraf dist",
+    "build": "rollup -c rollup.config.ts --environment INCLUDE_DEPS,BUILD:production",
+    "test": "jest --watch",
+    "test-ci": "jest test --coverage --ci --reporters=default --reporters=jest-junit && prettier --check \"{./src/**/*.tsx,./src/**/*.ts,./src/**/*.json}\" && eslint \"./js/**\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test-ci",
+    "lint": "eslint \"./js/**\"",
+    "prettier": "prettier --write \"{./js/**/*.tsx,./js/**/*.ts,./src/**/*.json}\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +31,26 @@
   "bugs": {
     "url": "https://github.com/ozangunalp/jReject/issues"
   },
-  "homepage": "https://github.com/ozangunalp/jReject#readme"
+  "homepage": "https://github.com/ozangunalp/jReject#readme",
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.9.0",
+    "@types/jest": "26.0.0",
+    "@types/rollup-plugin-json": "3.0.2",
+    "@types/rollup-plugin-sourcemaps": "0.4.2",
+    "@typescript-eslint/eslint-plugin": "1.13.0",
+    "@typescript-eslint/parser": "1.13.0",
+    "typescript": "3.9.5",
+    "jest": "26.0.1",
+    "ts-jest": "26.1.0",
+    "rimraf": "2.6.3",
+    "rollup": "1.17.0",
+    "rollup-plugin-commonjs": "10.0.1",
+    "rollup-plugin-filesize": "^6.1.1",
+    "rollup-plugin-json": "4.0.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-postcss": "2.4.1",
+    "rollup-plugin-sourcemaps": "0.4.2",
+    "rollup-plugin-terser": "^5.1.3",
+    "rollup-plugin-typescript2": "0.22.0"
+  }
 }
