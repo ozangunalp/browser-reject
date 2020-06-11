@@ -2,7 +2,7 @@
   "name": "browser-reject",
   "version": "1.0.0",
   "description": "Small no-dependency utility to detect the browser from the user agent and reject some browsers",
-  "source": "js/index.ts",
+  "source": "js/browser-reject.ts",
   "main": "dist/browser-reject.js",
   "umd:name": "BrowserReject",
   "umd:main": "dist/browser-reject.umd.js",

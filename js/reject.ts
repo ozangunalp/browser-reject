@@ -114,7 +114,7 @@ export const _cookie = function (name: string, opts: Options, value?: boolean) {
   }
 };
 
-interface Options {
+export interface Options {
   closeCookie: boolean;
   imagePath: string;
   display: string[];
@@ -139,23 +139,23 @@ interface Options {
   close: boolean;
   fadeOutTime: string;
   browserInfo: {
-    msie: {
+    msie?: {
       text: string;
       url: string;
     };
-    opera: {
+    opera?: {
       text: string;
       url: string;
     };
-    chrome: {
+    chrome?: {
       text: string;
       url: string;
     };
-    safari: {
+    safari?: {
       text: string;
       url: string;
     };
-    firefox: {
+    firefox?: {
       text: string;
       url: string;
     };
@@ -169,7 +169,7 @@ interface Options {
   afterClose?: () => void;
 }
 
-export const reject = function (options?: Options): boolean {
+export const reject = function (options?: Partial<Options>): boolean {
   const opts: Options = merge(
     {
       // Specifies which browsers/versions will be blocked
