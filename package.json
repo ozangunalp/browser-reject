@@ -1,7 +1,7 @@
 {
   "name": "browser-reject",
   "version": "1.0.0",
-  "description": "[jReject](http://jreject.turnwheel.com/) - jQuery Browser Rejection Plugin ================================",
+  "description": "Small no-dependency utility to detect the browser from the user agent and reject some browsers",
   "source": "js/index.ts",
   "main": "dist/browser-reject.js",
   "umd:name": "BrowserReject",
@@ -9,7 +9,9 @@
   "module": "dist/browser-reject.es.js",
   "types": "dist/types/browser-reject.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "images",
+    "css"
   ],
   "scripts": {
     "watch": "rollup -c rollup.config.ts -w",
@@ -24,10 +26,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ozangunalp/jReject.git"
+    "url": "git+https://github.com/ozangunalp/browser-reject.git"
   },
   "author": "ozangunalp@gmail.com",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ozangunalp/jReject/issues"
   },

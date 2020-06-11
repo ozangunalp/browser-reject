@@ -1,24 +1,21 @@
-[jReject](http://jreject.turnwheel.com/) - jQuery Browser Rejection Plugin
+Browser Reject
 ================================
+Small no-dependency utility to detect the browser from the user agent and if needed reject some browsers with a customizable message.  
 
-Created by Steven Bower
-TurnWheel Designs (2009-2014)
+## Disclaimer
+This project is a clone of jReject - jQuery Browser Rejection Plugin, created by Steven Bower TurnWheel Designs (2009-2014)
+But removes the dependency to jQuery.
+The options, css and images are maintained for backward compatibility.
 
-Concept based on "IE6 Upgrade Warning" library.
+## Usage
+Run On load (with default options):
+```javascript
+    window.onload = function () {
+        BrowserReject.reject();
+	};
+```
 
-View doc.html for documentation and examples, or
-visit [jreject.turnwheel.com](http://jreject.turnwheel.com/)
-
-**Important Note about jQuery Versions**
-Supported by jQuery 1.7+ & 2.0+
-If you wish to reject IE 6-8 or earlier, you must use jQuery 1.11.x or lower.
-
-Licensing:
------------------
-This library is dual licensed under the MIT and GPLv2 licenses.
-
-Default Options:
------------------
+## Options
 	options = {
 		// Specifies which browsers/versions will be blocked
 		reject : {
@@ -121,7 +118,5 @@ Default Options:
 		analytics: false
 	};
 
-Run On load (Default Options):
-	$(function() {
-		$.reject();
-	});
+## License
+This project is licensed under the terms of the MIT license.
