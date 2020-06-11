@@ -102,9 +102,10 @@
 	</style>
 
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="js/jquery.reject.js"></script>
+	<script src="dist/browser-reject.js"></script>
 	<script>
 	$(function() {
+		$.reject = BrowserReject.reject;
 		// Handle external links
 		$('a[rel="external"]').click(function() {
 			var href = $(this).attr('href');
@@ -415,18 +416,18 @@ options = {
 		<h2>Browser Plugin Options</h2>
 		<script>
 		$(function() {
-			$('#b_className').text($.browser.className);
-			$('#b_name').text($.browser.name);
-			$('#b_version').text($.browser.version);
-			$('#b_versionX').text($.browser.versionX);
-			$('#b_osname').text($.os.name);
+			$('#b_className').text(BrowserReject.browser.className);
+			$('#b_name').text(BrowserReject.browser.name);
+			$('#b_version').text(BrowserReject.browser.version);
+			$('#b_versionX').text(BrowserReject.browser.versionX);
+			$('#b_osname').text(BrowserReject.os.name);
 		});
 		</script>
-		$.browser.className = <strong id="b_className"></strong><br />
-		$.browser.name = <strong id="b_name"></strong><br />
-		$,browser.version = <strong id="b_version"></strong><br />
-		$.browser.versionX = <strong id="b_versionX"></strong><br />
-		$.os.name = <strong id="b_osname"></strong><br />
+		BrowserReject.browser.className = <strong id="b_className"></strong><br />
+		BrowserReject.browser.name = <strong id="b_name"></strong><br />
+		BrowserReject.browser.version = <strong id="b_version"></strong><br />
+		BrowserReject.browser.versionX = <strong id="b_versionX"></strong><br />
+		BrowserReject.os.name = <strong id="b_osname"></strong><br />
 
 		<hr />
 
