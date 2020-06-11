@@ -2,6 +2,9 @@
 
 Small no-dependency utility to detect the browser from the user agent and if needed reject some browsers with a customizable message.
 
+[![npm version](https://img.shields.io/npm/v/browser-reject.svg?style=flat&color=blue)](https://www.npmjs.com/package/browser-reject)
+![Node.js CI](https://github.com/ozangunalp/browser-reject/workflows/Node.js%20CI/badge.svg)
+
 ## Disclaimer
 
 This project is a clone of jReject - jQuery Browser Rejection Plugin, created by Steven Bower TurnWheel Designs (2009-2014)
