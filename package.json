@@ -18,11 +18,11 @@
     "prebuild": "rimraf dist",
     "build": "rollup -c rollup.config.ts --environment INCLUDE_DEPS,BUILD:production",
     "test": "jest --watch",
-    "test-ci": "jest test --coverage --ci --reporters=default --reporters=jest-junit && prettier --check \"{./src/**/*.tsx,./src/**/*.ts,./src/**/*.json}\" && eslint \"./js/**\"",
+    "test-ci": "jest test --coverage --ci --reporters=default --reporters=jest-junit && prettier --check \"./js/*.ts\" && eslint \"./js/**\"",
     "prepare": "npm run build",
     "prepublishOnly": "npm run test-ci",
     "lint": "eslint \"./js/**\"",
-    "prettier": "prettier --write \"{./js/**/*.tsx,./js/**/*.ts,./src/**/*.json}\""
+    "prettier": "prettier --write \"./js/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -31,20 +31,28 @@
   "author": "ozangunalp@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ozangunalp/jReject/issues"
+    "url": "https://github.com/ozangunalp/browser-reject/issues"
   },
-  "homepage": "https://github.com/ozangunalp/jReject#readme",
+  "homepage": "https://github.com/ozangunalp/browser-reject#readme",
   "devDependencies": {
     "@testing-library/jest-dom": "5.9.0",
     "@types/jest": "26.0.0",
     "@types/rollup-plugin-json": "3.0.2",
     "@types/rollup-plugin-sourcemaps": "0.4.2",
-    "@typescript-eslint/eslint-plugin": "1.13.0",
-    "@typescript-eslint/parser": "1.13.0",
+    "@typescript-eslint/eslint-plugin": "3.2.0",
+    "@typescript-eslint/parser": "3.2.0",
     "typescript": "3.9.5",
     "jest": "26.0.1",
     "ts-jest": "26.1.0",
+    "jest-junit": "10.0.0",
+    "jest-watch-typeahead": "0.6.0",
     "rimraf": "2.6.3",
+    "husky": "4.2.5",
+    "prettier": "2.0.5",
+    "pretty-quick": "2.0.1",
+    "eslint": "7.2.0",
+    "eslint-plugin-prettier": "3.1.3",
+    "eslint-config-prettier": "6.11.0",
     "rollup": "1.17.0",
     "rollup-plugin-commonjs": "10.0.1",
     "rollup-plugin-filesize": "^6.1.1",
@@ -54,5 +62,18 @@
     "rollup-plugin-sourcemaps": "0.4.2",
     "rollup-plugin-terser": "^5.1.3",
     "rollup-plugin-typescript2": "0.22.0"
-  }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "peerDependencies": {},
+  "dependencies": {}
 }
